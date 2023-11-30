@@ -1,3 +1,6 @@
+import time
+from player import RandomComputerPlayer, HumanPlayer
+
 class TicTacToe:
     def __init__(self):
         self.board = [' ' for _ in range(9)] # single list for 3x3 board
@@ -82,17 +85,26 @@ def play(game, x_player, o_player, print_game=True):
         # let's define a function to make a move!
         if game.make_move(square, letter):
             if print_game:
-                print(letter + f'makes a move to square {square}')
+                print(letter + f' makes a move to square {square}')
                 game.print_board()
                 print('')
             
             if game.current_winner:
                 if print_game:
-                    print(letter + 'wins')
+                    print(letter + ' wins!')
                 return letter
 
             # after we made our move, we need to alternate letters
             letter = 'O' if letter == 'X' else 'X'  # switches player
         
-        if print_game:
-            print('It\'s a tie!')
+        # Add 0.8s pause
+        time.sleep(0.8)
+        
+    if print_game:
+        print("It's a tie!")
+
+if __name__ == '__main__':
+    x_player = HumanPlayer('X')
+    o_player = RandomComputerPlayer('O')
+    t = TicTacToe()
+    play(t, x_player, o_player, print_game=True)
