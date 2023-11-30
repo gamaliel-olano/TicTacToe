@@ -40,3 +40,8 @@ def play(game, x_player, o_player, print_game=True):
             square = x_player.get_move(game)
 
         # let's define a function to make a move!
+        if game.make_move(square, letter):
+            if print_game:
+                print(letter + f'makes a move to square {square}')
+                game.print_board()
+                print('')
