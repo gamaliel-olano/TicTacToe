@@ -1,5 +1,6 @@
 # tictactoe-game
 - Practice project of implementing a Tic-Tac-Toe game using Python
+- Run 'game.py' in order to play!
 
 # version 1.0
 - As of 11/30/2023
