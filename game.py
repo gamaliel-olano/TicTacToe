@@ -45,3 +45,7 @@ def play(game, x_player, o_player, print_game=True):
                 print(letter + f'makes a move to square {square}')
                 game.print_board()
                 print('')
+
+            # after we made our move, we need to alternate letters
+            letter = 'O' if letter == 'X' else 'X'  # switches player
+            
